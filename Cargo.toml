@@ -3,6 +3,20 @@ name = "autoarc"
 version = "0.1.0"
 edition = "2021"
 
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
+
+[[bin]]
+name = "aarc"
+path = "src/main.rs"
+
+[[bin]]
+name = "unzip"
+path = "src/unzip.rs"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
